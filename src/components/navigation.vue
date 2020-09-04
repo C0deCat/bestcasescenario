@@ -1,11 +1,13 @@
 <template>
   <div class="menu">
-      <a class="username" href="#"><img src="@/assets/user.png"></a>
-      <a class="title" href="#"><img src="@/assets/quill-drawing-a-line.png">BestCaseScenario</a>
+      <div class="title">
+        <a class="title-text" href="#">BestCaseScenario</a>
+      </div>
       <div class="links">
-        <a href="#">/home</a>
-        <a href="#">/curriculum</a>
-        <a href="#">/about</a>
+        <router-link to="/">/home</router-link>
+        <router-link to="/">/curriculum</router-link>
+        <router-link to="/">/about</router-link>
+        <router-link to="/">/login</router-link>
       </div>
   </div>
 </template>
@@ -22,12 +24,12 @@ export default {
 .menu {
   background: $primary;
   width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   color: $secondary;
   align-items: center;
-
+  font-family: 'Roboto Slab', serif;
   a {
     text-decoration: none;
     &:visited {
@@ -35,12 +37,22 @@ export default {
     }
   }
 
+  .links {
+    padding-right: 10px;
+    font-size: 20px;
+    a {
+      margin-left: 10px;
+    }
+  }
+
   .title {
     font-size: 32px;
+    vertical-align: middle;
+    padding-left: 10px;
   }
 }
 
 img {
-  width: 32px;
+  width: 64px;
 }
 </style>

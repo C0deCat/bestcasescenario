@@ -4,7 +4,7 @@
         <a class="title-text" href="#">BestCaseScenario</a>
       </div>
       <div class="links">
-        <router-link to="/">/home</router-link>
+        <router-link class="active" to="/">/home</router-link>
         <router-link to="/">/curriculum</router-link>
         <router-link to="/">/about</router-link>
         <router-link to="/">/login</router-link>
@@ -26,6 +26,7 @@ export default {
   width: 100%;
   height: 70px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   color: $secondary;
   align-items: center;
@@ -34,6 +35,12 @@ export default {
     text-decoration: none;
     &:visited {
       color: $secondary;
+    }
+    &:hover {
+      color: $highlight;
+    }
+    &.active {
+      text-decoration: underline;
     }
   }
 

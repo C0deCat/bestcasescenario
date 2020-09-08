@@ -6,7 +6,7 @@
       <div class="links">
         <router-link class="active" to="/">/home</router-link>
         <router-link to="/">/curriculum</router-link>
-        <router-link to="/">/about</router-link>
+        <router-link to="/about">/about</router-link>
         <router-link to="/">/login</router-link>
       </div>
   </div>
@@ -32,6 +32,7 @@ export default {
   align-items: center;
   font-family: 'Roboto Slab', serif;
   a {
+    color: $secondary;
     text-decoration: none;
     &:visited {
       color: $secondary;

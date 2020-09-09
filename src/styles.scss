@@ -9,10 +9,10 @@ $error: #F03A47;
 .link {
     text-decoration: none;
     color: $highlight;
-    &.visited {
+    &:visited {
         color: $highlight;
     }
-    &.hover {
-        color: $highlight;
+    &:hover {
+        color: #B6AF71;
     }
 }

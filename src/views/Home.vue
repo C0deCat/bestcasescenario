@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <p>Пиши сценарии.</p>
-    <p>Создавай миры.</p>
-    <p>Развивай воображение.</p>
-    <button>Присоединиться</button>
+    <p class="line">Пиши сценарии.</p>
+    <p class="line">Создавай миры.</p>
+    <p class="line">Развивай воображение.</p>
+    <p><router-link to="/" class="button btn-join">Присоединиться</router-link></p>
   </div>
 </template>
 
@@ -19,10 +19,22 @@ export default {
 <style lang="scss" scoped>
 @import "../styles.scss";
 
-p {
+.line {
   font-size: 30px;
   font-family: 'Spectral', serif;
   color: $primary;
   font-weight: bold;
+}
+
+.btn-join {
+  background: $highlight;
+  color: $secondary;
+  padding: 15px;
+  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+
+  &:hover {
+    background: #8596D4;
+  }
 }
 </style>

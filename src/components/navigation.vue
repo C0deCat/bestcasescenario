@@ -7,7 +7,7 @@
         <router-link class="active" to="/">/home</router-link>
         <router-link to="/">/curriculum</router-link>
         <router-link to="/about">/about</router-link>
-        <router-link to="/">/login</router-link>
+        <router-link to="/login">/login</router-link>
       </div>
   </div>
 </template>

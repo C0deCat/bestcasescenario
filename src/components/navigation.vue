@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
       <div class="title">
-        <a class="title-text" href="#">BestCaseScenario</a>
+        <router-link class="title-text" to="/">BestCaseScenario</router-link>
       </div>
       <div class="links">
         <router-link class="active" to="/">/home</router-link>

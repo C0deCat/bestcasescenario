@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about mainscreen">
     <p>Это страница о приложении.</p>
     <p>Данное приложение разработано на базе фреймворка <a class="link" href="https://vuejs.org/">Vue.js</a>, с целью выполнения практической работы и использования в качестве основы для дипломной работы.</p>
     <p><a class="link" href="https://github.com/C0deCat/bestcasescenario">Репозиторий приложения</a></p>

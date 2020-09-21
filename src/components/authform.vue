@@ -1,15 +1,14 @@
 <template>
-  <form class="auth">
-      <input type="email" id="email" placeholder="e-mail"><div class="break"></div>
-      <input type="password" id="password" placeholder="пароль"><div class="break"></div>
-      <input type="password" id="confirm_pass" placeholder="повтор пароля"><div class="break"></div>
+  <form class="auth" @submit.prevent="onSubmit">
+      <input type="email" v-model="email" placeholder="e-mail"><div class="break"></div>
+      <input type="password" v-model="password" placeholder="пароль"><div class="break"></div>
+      <input type="password" v-model="confirm_password" placeholder="повтор пароля"><div class="break"></div>
       <button type="submit" class="button btn-submit">Зарегистрироваться</button>
   </form>
 </template>
 
 <script>
 import {firebase} from "../main"
-import router from '../router'
 export default {
   data() {
     return {
@@ -27,7 +26,7 @@ export default {
         })
       }
       this.email = this.password = this.confirm_password = ''
-      router.push('/')
+      this.$emit("toLogin")
     }
   }
 }

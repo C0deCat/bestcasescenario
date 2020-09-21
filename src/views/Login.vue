@@ -4,7 +4,7 @@
         <button class="btn-choose button" :class="{active: isReg}" @click="isReg = true">Регистрация</button>
         <button class="btn-choose button" :class="{active: !isReg}" @click="isReg = false">Вход</button>
     </div>
-    <Authform v-if="isReg"/>
+    <Authform @toLogin="isReg = false" v-if="isReg"/>
     <LogForm v-else/>
 </div>
 </template>

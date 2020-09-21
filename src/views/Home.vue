@@ -3,6 +3,7 @@
     <p class="line">Пиши сценарии.</p>
     <p class="line">Создавай миры.</p>
     <p class="line">Развивай воображение.</p>
+    <p class="line" v-if="user">{{ user.email }}</p>
     <p><router-link to="/" class="button btn-join">Присоединиться</router-link></p>
   </div>
 </template>
@@ -11,6 +12,11 @@
 
 export default {
   name: 'Home',
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  },
   components: {
   }
 }

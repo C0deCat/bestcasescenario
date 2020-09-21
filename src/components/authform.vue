@@ -1,8 +1,8 @@
 <template>
-  <form @submit.prevent="onSubmit">
-      <input type="email" v-model="email"><div class="break"></div>
-      <input type="password" v-model="password"><div class="break"></div>
-      <input type="password" v-model="confirm_password" v-if="isRegistration"><div class="break"></div>
+  <form class="auth">
+      <input type="email" id="email" placeholder="e-mail"><div class="break"></div>
+      <input type="password" id="password" placeholder="пароль"><div class="break"></div>
+      <input type="password" id="confirm_pass" placeholder="повтор пароля"><div class="break"></div>
       <button type="submit" class="button btn-submit">Зарегистрироваться</button>
   </form>
 </template>
@@ -33,43 +33,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import "../styles.scss";
-form {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.2rem;
-  justify-content: center;
-  
-  input {
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-    padding: 5px;
-    color: $primary;
-  }
+<style lang="scss">
 
-  input, button {
-    flex-basis: 250px;
-  }
-
-  .btn-submit {
-    padding: 10px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 17px;
-    background-color: $primary;
-    color: $secondary;
-
-    &:hover {
-      background-color: $highlight;
-    }
-  }
-
-  .break {
-    flex-basis: 100%;
-    width: 0;
-  }
-}
 </style>

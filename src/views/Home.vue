@@ -14,6 +14,7 @@ export default {
   name: 'Home',
   computed: {
     user() {
+      this.$store.commit('update_user')
       return this.$store.state.user
     }
   },

@@ -4,17 +4,33 @@
         <router-link class="title-text" to="/">BestCaseScenario</router-link>
       </div>
       <div class="links">
-        <router-link class="active" to="/">/home</router-link>
-        <router-link to="/">/curriculum</router-link>
-        <router-link to="/about">/about</router-link>
-        <router-link to="/login">/login</router-link>
+        <router-link @click.native="onLinkClick" :class="{ active: (currentRoute === '/') }" to="/">/home</router-link>
+        <router-link @click.native="onLinkClick" :class="{ active: (currentRoute === '/curriculum') }" to="/">/curriculum</router-link>
+        <router-link @click.native="onLinkClick" :class="{ active: (currentRoute === '/about') }" to="/about">/about</router-link>
+        <router-link v-if="!user" @click.native="onLinkClick" :class="{ active: (currentRoute === '/login') }" to="/login">/login</router-link>
+        <router-link v-else @click.native="onLinkClick" :class="{ active: (currentRoute === '/profile') }" to="/profile">/profile</router-link>
       </div>
   </div>
 </template>
 
 <script>
+import router from '../router'
 export default {
-
+  data() {
+    return {
+      currentRoute: router.currentRoute.path
+    }
+  },
+  methods: {
+    onLinkClick() {
+      this.currentRoute = router.currentRoute.path
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  },
 }
 </script>
 

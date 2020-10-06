@@ -12,6 +12,9 @@ import Footer from "@/components/footer"
 export default {
   components: {
     Navigation, Footer
+  },
+  mounted: function() {
+    this.$store.commit('update_user')
   }
 }
 </script>

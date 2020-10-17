@@ -4,22 +4,28 @@
         <button class="btn-choose button" :class="{active: isReg}" @click="isReg = true">Регистрация</button>
         <button class="btn-choose button" :class="{active: !isReg}" @click="isReg = false">Вход</button>
     </div>
-    <Authform @toLogin="isReg = false" v-if="isReg"/>
-    <LogForm v-else/>
+    <Authform @redirect="onRedirect" v-if="isReg"/>
+    <LogForm @redirect="onRedirect" v-else/>
 </div>
 </template>
 
 <script>
 import Authform from "@/components/authform"
 import LogForm from "@/components/logform"
+import router from '../router'
 export default {
     data() {
         return {
-            isReg: true
+            isReg: false
         }
     },
     components: {
         Authform, LogForm
+    },
+    methods: {
+      onRedirect() {
+        router.push('/')
+      }
     }
 }
 </script>

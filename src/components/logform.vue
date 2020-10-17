@@ -8,7 +8,6 @@
 
 <script>
 import {firebase} from "../main"
-import router from '../router'
 export default {
   data() {
     return {
@@ -17,14 +16,16 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-      .catch(function(error) {
+    async onSubmit() {
+      try {
+        await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        this.email = this.password = ''
+        this.$store.commit('update_user')
+        this.$emit('redirect')
+      }
+      catch(error) {
         console.log(error.message)
-      })
-      this.email = this.password = ''
-      this.$store.commit('update_user')
-      router.push('/')
+      }
     }
   }
 }

@@ -18,15 +18,22 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       if (this.password === this.confirm_password) {
-        firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .catch(function(error) {
+        try {
+          const result = await firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+          const data = {
+            uid: result.user.uid,
+            isAdmin: false
+          };
+          await firebase.firestore().collection('users').doc(result.user.uid).set(data)
+          this.email = this.password = this.confirm_password = ''
+          this.$store.commit('update_user')
+          this.$emit("redirect")
+        } catch (error) {
           console.log(error.message)
-        })
+        }
       }
-      this.email = this.password = this.confirm_password = ''
-      this.$emit("toLogin")
     }
   }
 }

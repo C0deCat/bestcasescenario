@@ -5,7 +5,7 @@
       </div>
       <div class="links">
         <router-link :class="{ active: (currentRoute === '/') }" to="/">/home</router-link>
-        <router-link :class="{ active: (currentRoute === '/curriculum') }" to="/">/curriculum</router-link>
+        <router-link :class="{ active: (currentRoute === '/curriculum') }" to="/curriculum">/curriculum</router-link>
         <router-link :class="{ active: (currentRoute === '/about') }" to="/about">/about</router-link>
         <router-link v-if="!user" :class="{ active: (currentRoute === '/login') }" to="/login">/login</router-link>
         <router-link v-else :class="{ active: (currentRoute === '/profile') }" to="/profile">/profile</router-link>

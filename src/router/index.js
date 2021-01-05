@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Profile from '../views/Profile.vue'
+import Curriculum from '../views/Curriculum.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ Vue.use(VueRouter)
     path: '/profile',
     name: 'Profile',
     component: Profile
+  },
+  {
+    path: '/curriculum',
+    name: 'Curriculum',
+    component: Curriculum
   }
 ]
 

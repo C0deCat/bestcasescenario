@@ -1,10 +1,13 @@
 <template>
-  <div>Енто вкладка расписания. На ней пока пусто, ага!</div>
+  <LessonLink name="Lesson 1: Introduction!"/>
 </template>
 
 <script>
+import LessonLink from "@/components/lessonLink"
 export default {
-
+  components: {
+    LessonLink
+  }
 }
 </script>
 
